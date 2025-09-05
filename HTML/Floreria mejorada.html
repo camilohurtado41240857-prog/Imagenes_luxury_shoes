@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="description" content="Explore una variedad de plantas de interior para su hogar u oficina.">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plantas de Interior</title>
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f3f6f4;
+      color: #2d2d2d;
+      margin: 0;
+      padding: 0;
+    }
+
+    header {
+      background-color: #88b04b;
+      color: white;
+      padding: 1.5rem 0;
+      text-align: center;
+    }
+
+    main {
+      padding: 2rem;
+    }
+
+    /* Giro comercial */
+    .giro {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
+
+    .giro img {
+      width: 100%;
+      max-width: 800px;
+      border-radius: 12px;
+    }
+
+    .giro-buttons {
+      margin-top: 1rem;
+    }
+
+    .giro-buttons button {
+      margin: 0.5rem;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 6px;
+      background-color: #88b04b;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    .giro-buttons button:hover {
+      background-color: #6a883b;
+    }
+
+    /* Productos en grid */
+    .productos {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+      gap: 1.5rem;
+      justify-content: center;
+    }
+
+    .planta {
+      background: #fff;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      padding: 1rem;
+      text-align: center;
+    }
+
+    .planta img {
+      width: 100%;
+      height: auto;
+      border-radius: 8px;
+      max-height: 200px;
+      object-fit: cover;
+    }
+
+    .precio {
+      font-weight: bold;
+      margin: 0.5rem 0;
+    }
+
+    button {
+      background-color: #88b04b;
+      color: white;
+      border: none;
+      padding: 8px 16px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+
+    button:hover {
+      background-color: #6a883b;
+    }
+
+    #carrito {
+      margin-top: 3rem;
+      background-color: #ffffff;
+      padding: 1rem;
+      border-radius: 10px;
+      max-width: 600px;
+      margin-left: auto;
+      margin-right: auto;
+      text-align: center;
+    }
+
+    footer {
+      margin-top: 3rem;
+      background-color: #333;
+      color: white;
+      padding: 1rem;
+      text-align: center;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>Plantas de interior</h1>
+  </header>
+
+  <main>
+
+    <!-- Sección giro comercial -->
+    <section class="giro">
+      <img src="https://images.unsplash.com/photo-1560185893-73c3c4c6d0c2" alt="Floristería">
+      <div class="giro-buttons">
+        <button onclick="alert('Ver productos')">Productos</button>
+        <button onclick="alert('Ver servicios')">Servicios</button>
+        <button onclick="alert('Contáctanos')">Contacto</button>
+      </div>
+    </section>
+
+    <!-- Productos -->
+    <section class="productos">
+      <div class="planta">
+        <h2>Lirio de la paz</h2>
+        <img src="https://edube.org/uploads/media/default/0001/04/spathiphyllum-peace-lily.jpg" alt="Lirio de la paz">
+        <p>El lirio de la paz, conocido por sus elegantes flores blancas, es una opción popular para espacios interiores.</p>
+        <p class="precio">Precio: $15</p>
+        <button onclick="agregarAlCarrito('Lirio de la paz', 15)">Agregar al carrito</button>
+      </div>
+
+      <div class="planta">
+        <h2>Gema de Zanzíbar</h2>
+        <img src="https://edube.org/uploads/media/default/0001/04/zamioculcas-zanzibar-gem.jpg" alt="Joya de Zanzíbar">
+        <p>La Zanzibar Gem, con su follaje verde brillante, es una planta de interior que requiere poco mantenimiento, perfecta para principiantes.</p>
+        <p class="precio">Precio: $20</p>
+        <button onclick="agregarAlCarrito('Gema de Zanzíbar', 20)">Agregar al carrito</button>
+      </div>
+    </section>
+
+    <!-- Carrito -->
+    <section id="carrito">
+      <h2>Carrito de Compras</h2>
+      <ul id="lista-carrito"></ul>
+      <p id="total">Total: $0</p>
+    </section>
+
+  </main>
+
+  <footer>
+    <p>© 2025 Bloom & Petal Haven - Todos los derechos reservados</p>
+    <p>Contacto: info@bloomandpetal.com</p>
+  </footer>
+
+  <script>
+    let total = 0;
+
+    function agregarAlCarrito(nombre, precio) {
+      const lista = document.getElementById("lista-carrito");
+      const item = document.createElement("li");
+      item.textContent = `${nombre} - $${precio}`;
+      lista.appendChild(item);
+
+      total += precio;
+      document.getElementById("total").textContent = `Total: $${total}`;
+    }
+  </script>
+</body>
+</html>

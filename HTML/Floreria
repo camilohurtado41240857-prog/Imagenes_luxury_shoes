@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="Explore una variedad de plantas de interior para su hogar u oficina.">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Plantas de Interior</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Plantas de interior</h1>
+    </header>
+
+    <main>
+        <section class="planta">
+            <h2>Lirio de la paz</h2>
+            <img src="https://edube.org/uploads/media/default/0001/04/spathiphyllum-peace-lily.jpg" alt="Lirio de la paz">
+            <p>El lirio de la paz, conocido por sus elegantes flores blancas, es una opción popular para espacios interiores.</p>
+            <p class="precio">Precio: $15</p>
+            <button onclick="agregarAlCarrito('Lirio de la paz', 15)">Agregar al carrito</button>
+        </section>
+
+        <section class="planta">
+            <h2>Gema de Zanzíbar</h2>
+            <img src="https://edube.org/uploads/media/default/0001/04/zamioculcas-zanzibar-gem.jpg" alt="Joya de Zanzíbar">
+            <p>La Zanzibar Gem, con su follaje verde brillante, es una planta de interior que requiere poco mantenimiento, perfecta para principiantes.</p>
+            <p class="precio">Precio: $20</p>
+            <button onclick="agregarAlCarrito('Gema de Zanzíbar', 20)">Agregar al carrito</button>
+        </section>
+
+        <section id="carrito">
+            <h2>Carrito de Compras</h2>
+            <ul id="lista-carrito"></ul>
+            <p id="total">Total: $0</p>
+        </section>
+    </main>
+
+    <footer>
+        <p>© 2025 Bloom & Petal Haven - Todos los derechos reservados</p>
+        <p>Contacto: info@bloomandpetal.com</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
